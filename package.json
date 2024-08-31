@@ -104,7 +104,7 @@
     "tailwindcss": "^3.4.10"
   },
   "scripts": {
-    "dev": "concurrently \"postcss ./src/css/main.css -o ./public/build/tailwind.css --watch\" \"nodemon server.js\""
+    "dev": "postcss ./src/css/main.css -o ./public/build/tailwind.css --watch"
   },
   "keywords": [],
   "author": "",

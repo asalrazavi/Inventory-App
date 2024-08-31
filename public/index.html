@@ -32,16 +32,16 @@
           <!-- <h1 class="text-xl font-bold text-slate-300">Inventory App</h1> -->
           <ul class="text-slate-300 space-y-4 gap-2 mt-4">
             <li class="hover:text-white cursor-pointer">
-              <a href="dashboard" data-link="">Dashboard</a>
+              <a href="#" data-link="">Dashboard</a>
             </li>
             <li class="hover:text-white cursor-pointer">
-              <a href="products" data-link="">Products</a>
+              <a href="#" data-link="">Products</a>
             </li>
             <li class="hover:text-white cursor-pointer">
-              <a href="category" data-link="">Category</a>
+              <a href="#" data-link="">Category</a>
             </li>
             <li class="hover:text-white cursor-pointer">
-              <a href="ProductsList" data-link="">Products List</a>
+              <a href="#" data-link="">Products List</a>
             </li>
           </ul>
           <div id="content-area" class="p-6 text-slate-300">
@@ -50,8 +50,10 @@
         </div>
 
         <!-- app Content -->
-        <div class="container max-w-screen-sm mx-auto mt-8 app">
-          <!-- <div>
+        <div
+          class="container max-w-screen-sm mx-auto mt-8 app gap-y-8 flex flex-col"
+        >
+          <div id="category-feild">
             <h2 class="text-xl text-slate-300 font-bold mb-1">
               Add New Category
             </h2>
@@ -94,9 +96,9 @@
                 </button>
               </div>
             </form>
-          </div> -->
+          </div>
           <!-- add product -->
-          <!-- <div>
+          <div>
             <h2 class="text-xl text-slate-300 font-bold mb-1">
               Add New Product
             </h2>
@@ -117,10 +119,17 @@
                 <label for="product-quantity" class="block mb-1 text-slate-400">
                   Quantity
                 </label>
-                            <input type="number" name="product-quantity" id="product-quantity" class="bg-transparent rounded-xl border border-slate-500 text-slate-400" placeholder="quantity..." />
-                        </div>
-                        <div>
-                            <label for="product-category" class="block mb-1 text-slate-400">Category</label
+                <input
+                  type="number"
+                  name="product-quantity"
+                  id="product-quantity"
+                  class="bg-transparent rounded-xl border border-slate-500 text-slate-400"
+                  placeholder="quantity..."
+                />
+              </div>
+              <div>
+                <label for="product-category" class="block mb-1 text-slate-400"
+                  >Category</label
                 >
                 <select
                   name="product-category"
@@ -137,9 +146,9 @@
                 </button>
               </div>
             </form>
-          </div> -->
+          </div>
           <!-- product list -->
-          <!-- <div class="flex justify-between flex-col gap-x-6">
+          <div class="flex justify-between flex-col gap-x-6">
             <h2 class="text-xl text-slate-300 font-bold mb-1">Products List</h2>
             <div class="flex items-center justify-between mb-6">
               <label for="search-input" class="text-slate-500 text-lg"
@@ -178,7 +187,7 @@
             </div>
             <ul id="products-list" class="overflow-x-auto"></ul>
             <div class="h-20"></div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -227,8 +236,6 @@
         </div>
       </div>
     </div>
-
-    <script src="/src/js/showContent.js" type="module"></script>
     <script src="/src/js/app.js" type="module"></script>
   </body>
 </html>

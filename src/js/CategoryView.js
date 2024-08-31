@@ -1,4 +1,4 @@
-import Storage from "./storage.js";
+import Storage from "./Storage.js";
 const categoryTitle = document.querySelector("#category-title");
 const categoryDescription = document.querySelector("#category-description");
 const addNewCategory = document.querySelector("#add-new-category");
