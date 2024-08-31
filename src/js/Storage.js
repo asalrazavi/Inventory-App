@@ -65,18 +65,33 @@ export default class Storage {
 
   static saveProducts(productToSave) {
     const savedProducts = Storage.getAllProducts();
-    const existedProduct = savedProducts.find((p) => p.id === productToSave.id);
-    if (existedProduct) {
-      //edit product
-      existedProduct.title = productToSave.title;
-      existedProduct.category = productToSave.category;
-      existedProduct.quatity = productToSave.quantity;
+    const existedProductIndex = savedProducts.findIndex(
+      (p) => p.id === productToSave.id
+    );
+
+    if (existedProductIndex !== -1) {
+      // Edit product
+      savedProducts[existedProductIndex] = {
+        ...savedProducts[existedProductIndex],
+        title: productToSave.title,
+        category: productToSave.category,
+        quantity: productToSave.quantity,
+      };
     } else {
-      //new product
+      // New product
       productToSave.id = new Date().getTime();
       productToSave.createdAt = new Date().toISOString();
       savedProducts.push(productToSave);
     }
+
     localStorage.setItem("products", JSON.stringify(savedProducts));
+  }
+
+  static deleteProduct(id) {
+    const savedProdocuts = Storage.getAllProducts();
+    const filteredProducts = savedProdocuts.filter(
+      (p) => p.id !== parseInt(id)
+    );
+    localStorage.setItem("products", JSON.stringify(filteredProducts));
   }
 }

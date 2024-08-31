@@ -1,62 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inventory App</title>
     <link rel="stylesheet" href="./build/tailwind.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="bg-slate-800 h-screen flex flex-col">
-        <!-- Top Menu -->
-        <nav class="bg-slate-700 w-full p-4 flex justify-between items-center">
-            <div class="text-slate-300 font-bold text-lg">Inventory App</div>
-            <!-- <span
+      <!-- Top Menu -->
+      <nav class="bg-slate-700 w-full p-4 flex justify-between items-center">
+        <div class="text-slate-300 font-bold text-lg">Inventory App</div>
+        <!-- <span
           class="flex items-center justify-center w-7 h-7 rounded-full bg-slate-500 text-slate-300 border-2 border-slate-300 font-bold"
           >7
         </span> -->
-            <ul class="flex space-x-4 text-slate-300">
-                <li class="hover:text-white cursor-pointer">Home</li>
-                <li class="hover:text-white cursor-pointer">About</li>
-                <li class="hover:text-white cursor-pointer">Contact</li>
-            </ul>
-        </nav>
+        <ul class="flex space-x-4 text-slate-300">
+          <li class="hover:text-white cursor-pointer">Home</li>
+          <li class="hover:text-white cursor-pointer">About</li>
+          <li class="hover:text-white cursor-pointer">Contact</li>
+        </ul>
+      </nav>
 
-        <!-- Main Content Area -->
-        <div class="flex flex-1 bg-slate-800">
-            <!-- Left Sidebar -->
-            <div class="h-full w-32 flex flex-col items-center gap-4 bg-slate-700 p-4">
-                <!-- <h1 class="text-xl font-bold text-slate-300">Inventory App</h1> -->
-                <ul class="text-slate-300 space-y-4 gap-2 mt-4">
-                    <li class="hover:text-white cursor-pointer">
-                        <a href="dashboard" data-link="">Dashboard</a>
-                    </li>
-                    <li class="hover:text-white cursor-pointer">
-                        <a href="products" data-link="">Products</a>
-                    </li>
-                    <li class="hover:text-white cursor-pointer">
-                        <a href="category" data-link="">Category</a>
-                    </li>
-                    <li class="hover:text-white cursor-pointer">
-                        <a href="ProductsList" data-link="">Products List</a>
-                    </li>
-                </ul>
-                <div id="content-area" class="p-6 text-slate-300">
-                    <!-- Content will be dynamically inserted here -->
-                </div>
-            </div>
+      <!-- Main Content Area -->
+      <div class="flex flex-1 bg-slate-800">
+        <!-- Left Sidebar -->
+        <div
+          class="h-full w-32 flex flex-col items-center gap-4 bg-slate-700 p-4"
+        >
+          <!-- <h1 class="text-xl font-bold text-slate-300">Inventory App</h1> -->
+          <ul class="text-slate-300 space-y-4 gap-2 mt-4">
+            <li class="hover:text-white cursor-pointer">
+              <a href="dashboard" data-link="">Dashboard</a>
+            </li>
+            <li class="hover:text-white cursor-pointer">
+              <a href="products" data-link="">Products</a>
+            </li>
+            <li class="hover:text-white cursor-pointer">
+              <a href="category" data-link="">Category</a>
+            </li>
+            <li class="hover:text-white cursor-pointer">
+              <a href="ProductsList" data-link="">Products List</a>
+            </li>
+          </ul>
+          <div id="content-area" class="p-6 text-slate-300">
+            <!-- Content will be dynamically inserted here -->
+          </div>
+        </div>
 
-            <!-- app Content -->
-            <div class="container max-w-screen-sm mx-auto mt-8 app">
-                <!-- <div>
-                    <h2 class="text-xl text-slate-300 font-bold mb-1">
-                        Add New Category
-                    </h2>
-                    <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
-                        <div>
-                            <label for="category-title" class="block mb-1 text-slate-400">title</label
+        <!-- app Content -->
+        <div class="container max-w-screen-sm mx-auto mt-8 app">
+          <!-- <div>
+            <h2 class="text-xl text-slate-300 font-bold mb-1">
+              Add New Category
+            </h2>
+            <form class="bg-slate-700 p-4 rounded-xl flex flex-col gap-y-4">
+              <div>
+                <label for="category-title" class="block mb-1 text-slate-400"
+                  >title</label
                 >
                 <input
                   type="text"
@@ -91,10 +93,10 @@
                   Add new Category
                 </button>
               </div>
-            </form> -->
-            </div>
-            <!-- add product -->
-            <!-- <div>
+            </form>
+          </div> -->
+          <!-- add product -->
+          <!-- <div>
             <h2 class="text-xl text-slate-300 font-bold mb-1">
               Add New Product
             </h2>
@@ -136,8 +138,8 @@
               </div>
             </form>
           </div> -->
-            <!-- product list -->
-            <!-- <div class="flex justify-between flex-col gap-x-6">
+          <!-- product list -->
+          <!-- <div class="flex justify-between flex-col gap-x-6">
             <h2 class="text-xl text-slate-300 font-bold mb-1">Products List</h2>
             <div class="flex items-center justify-between mb-6">
               <label for="search-input" class="text-slate-500 text-lg"
@@ -173,15 +175,60 @@
                   oldest
                 </option>
               </select>
-            </div> -->
+            </div>
             <ul id="products-list" class="overflow-x-auto"></ul>
             <div class="h-20"></div>
-            <!-- </div> -->
+          </div> -->
         </div>
+      </div>
     </div>
+    <!-- Edit Modal -->
+    <div
+      id="editModal"
+      class="hidden fixed inset-0 z-10 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center"
+    >
+      <div
+        class="bg-slate-800 mx-auto mt-[15%] text-slate-300 sm:mx-auto p-6 rounded-xl w-full max-w-lg shadow-lg"
+      >
+        <div
+          class="flex justify-between items-center pb-4 border-b border-slate-600"
+        >
+          <h2 class="text-xl font-semibold">Edit Product</h2>
+          <span
+            class="text-2xl font-bold cursor-pointer hover:text-red-500 close"
+            >&times;</span
+          >
+        </div>
+        <div class="flex flex-col gap-y-4 mt-4">
+          <input
+            type="text"
+            id="modalInput"
+            placeholder="Product Title"
+            class="bg-transparent rounded-lg border border-slate-600 text-slate-300 w-full p-3 focus:border-green-500 focus:ring-0 placeholder-slate-500 outline-none"
+          />
+          <input
+            type="number"
+            id="modalQuantity"
+            placeholder="Quantity"
+            class="bg-transparent rounded-lg border border-slate-600 text-slate-300 w-full p-3 focus:border-green-500 focus:ring-0 placeholder-slate-500 outline-none"
+          />
+          <select
+            id="modalCategory"
+            class="bg-transparent rounded-lg border border-slate-600 text-slate-300 w-full p-3 focus:border-green-500 focus:ring-0 placeholder-slate-500 outline-none"
+          >
+            <!-- Options will be populated here -->
+          </select>
+          <button
+            id="saveEdit"
+            class="w-full py-3 bg-green-600 text-white rounded-lg cursor-pointer hover:bg-green-500 focus:outline-none transition-colors duration-200"
+          >
+            Save Changes
+          </button>
+        </div>
+      </div>
     </div>
+
     <script src="/src/js/showContent.js" type="module"></script>
     <script src="/src/js/app.js" type="module"></script>
-</body>
-
+  </body>
 </html>
